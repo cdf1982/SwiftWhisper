@@ -16,6 +16,7 @@ let package = Package(
     targets: [
         .target(name: "SwiftWhisper", dependencies: [.target(name: "whisper_cpp")]),
         .target(name: "whisper_cpp",
+                path: "Sources/whisper_cpp",
                 exclude: exclude,
                 cSettings: [
                     .define("GGML_USE_ACCELERATE", .when(platforms: [.macOS, .macCatalyst, .iOS])),
